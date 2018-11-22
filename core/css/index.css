@@ -1,0 +1,445 @@
+/*Font Styles*/
+@font-face {
+    font-family: 'Bulgatti';
+    src: url(../font/Bulgatti.ttf);
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'SF-Pro-Display-Thin';
+    src: url(../font/SF-Pro-Display-Thin.otf);
+    font-weight: normal;
+    font-style: normal;
+}
+
+/*Loading Styles*/
+#load {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100vw;
+    height: 100vh;
+    z-index: 9999;
+    background-color: #eee;
+    transition-duration: 1s;
+    visibility: visible;
+}
+#loading-container {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+#loading-image{
+    max-height: 25vw;
+    max-width: 25vw;
+}
+.loading-bar {
+    margin-top: 3em;
+    background-color: #ddd;
+    width: 15vw;
+    height: 4px;
+    border-radius: 3px;
+    overflow: hidden;
+    position: relative;
+}
+.moving-bar {
+    animation: sideToside 1.75s ease-in-out infinite;
+    background-color: #bfa469;
+    height: 100%;
+    position: absolute;
+    width: 50%;
+}
+@keyframes sideToside {
+    0%, 100% { transform: translateX(-50%); }
+    50%      { transform: translateX(150%); }
+}
+
+/*Container Styles*/
+body {
+    margin: 0;
+    padding: 0;
+    width: 100vw;
+    min-height: 100%;
+    background-color: #eee;
+    overflow-x: hidden;
+}
+div {
+    box-sizing: border-box;
+}
+#body-container{
+    padding: 0;
+    margin: 0;
+    width: 100vw;
+    height: 100%;
+    transition-duration: 1.5s;
+    display: block;
+    opacity: 0;
+    transition-delay: 0.5s;
+    transition-duration: 1.25s;
+    position: absolute;
+}
+
+/*Scroll Bar Styles*/
+::-webkit-scrollbar {
+    width: 7px;
+}
+::-webkit-scrollbar-thumb {
+    background: #bfa469;
+}
+::-webkit-scrollbar-track {
+    background: #eee;
+}
+
+/*Selection Style*/
+::selection {
+    color: #f1f1f1;
+    background: #555;
+}
+::-moz-selection {
+    color: #f1f1f1;
+    background: #555;
+}
+/* END OF STANDARD STYLES */
+/*Container Styles New*/
+.page {
+    width: 100vw;
+    height: auto;
+    display: flex;
+}
+.album-ds {
+    justify-content: center;
+    width: 50vw;
+    min-height: 48vw;
+    padding: 0;
+    display: flex;
+}
+.split-content{
+    width: auto;
+    height: auto;
+    display: block;
+}
+
+/*Header Styles*/
+.header-container {
+    width: 50vw;
+    height: 30vw;
+    position: relative;
+}
+.header-wrapper {
+    width: 36vw;
+    height: 20vw;
+    border-radius: 1.5vw;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 4vw 8vw rgba(0,0,0,0.2);
+    background-color: #fff;
+    transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+/*All Album Styles*/
+.album-container {
+    width: 50vw;
+    height: 50vw;
+    position: relative;
+}
+.album-wrapper {
+    width: 36vw;
+    height: 40vw;
+    border-radius: 1.5vw;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 4vw 8vw rgba(0,0,0,0.2);
+    background-color: #fff;
+    transition: 0.2s;
+}
+.album-hovered-on {
+    width: 34vw;
+    height: 38vw;
+    border-radius: 1.5vw;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 2vw 4vw rgba(0,0,0,0.35);
+}
+.album-target:hover {
+    cursor: pointer;
+}
+.album-display {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.album-art {
+    width: 100%;
+    flex-grow: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.album-description {
+    width: 100%;
+    height: auto;
+    padding: 1vw;
+}
+.description-container {
+    width: 100%;
+    overflow: hidden;
+    height: calc(3.75em + 1vw);
+}
+.top-fix {
+    background-position: top;
+}
+
+/*Text Styles*/
+h2 {
+    margin: 0;
+    font-size: 1.5em;
+    padding: 0;
+    color: #bfa469;
+    text-align: center;
+    font-family: "Bulgatti", Helvetica, Arial, sans-serif;
+}
+
+/*Content Text Styles*/
+h3 {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 0.25em;
+    font-size: 2em;
+    color: #bfa469;
+    text-align: center;
+    font-family: "Bulgatti", Helvetica, Arial, sans-serif;
+}
+h4 {
+    margin: 0;
+    padding: 0;
+    padding-bottom: 0.5em;
+    font-size: 1em;
+    color: #000;
+    text-align: center;
+    font-family: "SF-Pro-Display-Thin", Helvetica, Arial, sans-serif;
+}
+p {
+    margin: 0;
+    font-size: 1.25em;
+    padding: 0;
+    line-height: 1.25em;
+    color: #888;
+    font-weight: 100;
+    text-align: center;
+    font-family: "SF-Pro-Display-Thin", Helvetica, Arial, sans-serif;
+}
+
+/*Footer Styles*/
+.footer {
+    width: 100vw;
+    height: auto;
+    padding: 2vw;
+}
+#footer-logo {
+    width: 10em;
+    padding: 1em;
+}
+.footer-text {
+    text-indent: 0;
+    font-size: 1em;
+}
+
+/*Mobile Support*/
+@media only screen and (max-width: 100vh) {
+/*Loading*/
+#loading-container {
+    position: absolute;
+    bottom: 50%;
+    left: 50%;
+    transform: translate(-50%, 50%);
+}
+#loading-image{
+    max-height: 50vw;
+    max-width: 50vw;
+}
+.loading-bar {
+    margin-top: 3em;
+    background-color: #ddd;
+    width: 40vw;
+    height: 4px;
+    border-radius: 0;
+    overflow: hidden;
+    position: relative;
+}
+.moving-bar {
+    animation: sideToside 1.75s ease-in-out infinite;
+    background-color: #bfa469;
+    height: 100%;
+    position: absolute;
+    width: 50%;
+}
+@keyframes sideToside {
+    0%, 100% { transform: translateX(-50%); }
+    50%      { transform: translateX(150%); }
+}
+.page {
+    width: 100vw;
+    height: auto;
+    display: grid;
+    align-items: center;
+    justify-content: space-between;
+}
+.ds-split {
+    width: 100vw;
+    min-height: 60vw;
+    padding: 2em;
+    display: flex;
+    align-items: center;
+}
+.album-ds {
+    width: 100vw;
+    min-height: 48vw;
+    padding: 0;
+    display: flex;
+}
+.split-content{
+    width: auto;
+    height: auto;
+    display: block;
+}
+    
+/*Header Styles*/
+.header-container {
+    width: 100vw;
+    height: 70vw;
+    position: relative;
+}
+.header-wrapper {
+    width: 74vw;
+    height: 56vw;
+    border-radius: 6vw;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 4vw 8vw rgba(0,0,0,0.2);
+    background-color: #fff;
+    transition: 0.2s;
+    display: flex;
+    flex-direction: column;
+}
+
+/*All Album Styles*/
+.album-container {
+    width: 100vw;
+    height: 150vw;
+    position: relative;
+}
+.album-wrapper {
+    width: 74vw;
+    height: 120vw;
+    border-radius: 6vw;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 4vw 8vw rgba(0,0,0,0.2);
+    background-color: #fff;
+    transition: 0.2s;
+}
+.album-hovered-on {
+    width: 70vw;
+    height: 82vw;
+    border-radius: 6vw;
+    overflow: hidden;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    box-shadow: 0 2vw 4vw rgba(0,0,0,0.35);
+}
+.album-target:hover {
+    cursor: pointer;
+}
+.album-display {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.album-art {
+    width: 100%;
+    flex-grow: 1;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.album-description {
+    width: 100%;
+    height: auto;
+    padding: 3vw;
+}
+.description-container {
+    width: 100%;
+    overflow: hidden;
+    height: calc(2.25em + 1vw);
+}
+.top-fix {
+    background-position: top;
+}
+
+/*Text Styles*/
+h2 {
+    margin: 0;
+    font-size: 1em;
+    padding: 0;
+    color: #bfa469;
+    font-weight: 100;
+    font-family: "Bulgatti", Helvetica, Arial, sans-serif;
+}
+
+/*Content Text Styles*/
+h3 {
+    margin: 0;
+    padding: 1.5vw 0 0.25em 0;
+    font-size: 1em;
+    color: #bfa469;
+    font-family: "Bulgatti", Helvetica, Arial, sans-serif;
+}
+
+p {
+    margin: 0;
+    font-size: 0.75em;
+    padding: 0;
+    line-height: 1em;
+    color: #888;
+    font-weight: 100;
+    font-family: "SF-Pro-Display-Thin", Helvetica, Arial, sans-serif;
+}
+    
+/*Footer Styles*/
+.footer {
+    width: 100vw;
+    height: auto;
+    padding: 4vw;
+}
+#footer-logo {
+    width: 6em;
+    padding: 0.25em;
+}
+.footer-text {
+    text-indent: 0;
+    font-size: 0.7em;
+    line-height: 150%;
+}
+}
