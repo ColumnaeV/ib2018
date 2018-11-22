@@ -358,8 +358,8 @@ p {
     transition: 0.2s;
 }
 .album-hovered-on {
-    width: 70vw;
-    height: 82vw;
+    width: 74vw;
+    height: 120vw;
     border-radius: 6vw;
     overflow: hidden;
     position: absolute;
